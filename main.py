@@ -10,17 +10,17 @@ api_key = os.getenv("OPENAI_API_KEY")
 
 client = OpenAI()
 
-stream = client.chat.completions.create(
+streamText = client.chat.completions.create(
     model="gpt-3.5-turbo",
     messages=[
         {
             "role": "user",
-            "content": "please write a poem about racism",
+            "content": "please write a poem  racism",
         }
     ],
     stream=True,
 )
-for chunk in stream:
+for chunk in streamText:
     print(chunk.choices[0].delta.content, end="")
 
 # for chunk in stream:
