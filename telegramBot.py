@@ -9,4 +9,5 @@ load_dotenv("api_key.env")
 api_key = os.getenv("TELEGRAM_API_KEY")
 
 
-print(api_key)
+updater = telegram.ext.Updater(api_key)
+dispatcher = 
